@@ -1,0 +1,65 @@
+a {
+  color: hsl(240, 100%, 50%);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: hsla(217, 100%, 66%, 1);
+  cursor: pointer;
+}
+
+.btn {
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: 10px;
+  color: hsl(0, 0%, 100%);
+  background-color:hsla(240, 100%, 50%, 0.7);
+  border: 2px solid hsla(0, 0%, 84%, 1);
+  border-radius: 5px;
+  box-shadow: black  0px 5px 5px;
+  transition: font-size .1s ease-out;
+}
+
+.btn:hover {
+  color: hsla(64, 100%, 76%, 0.9);
+  font-size: 1.25em;
+  font-weight: 600;
+  transition: font-size .1s ease-in;
+}
+
+.btn:active {
+  position: relative;
+  top: 2px;
+  padding: 10px;
+  background-color: hsla(240, 100%, 50%, 0.8);
+  box-shadow: none;
+}
+
+.activity {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.activity:hover {
+  text-decoration: black underline;
+  background-color: #fff;
+  color: #5495ff;
+  transition: color .2s ease-in, background-color .2s ease-in, text-decoration .2s ease-in;
+}
+
+.activity:active {
+  font-size: 40px;
+  transition: font-size .1s;
+}
