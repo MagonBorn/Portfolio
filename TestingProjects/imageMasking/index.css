@@ -1,0 +1,6 @@
+.masked {
+  -webkit-mask-image: url(./img-mask.svg);
+  mask-image: url(./img-mask.svg);
+  border: 1px solid red;
+
+}
