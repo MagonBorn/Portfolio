@@ -14,25 +14,108 @@ svg {
   height: 100%;
 }
 
+text {
+  font-size: 72px;
+  animation: colourChange 12s linear;
+}
+
 path {
   stroke-dasharray: 6000;
   stroke-dashoffset: 6000;
-  animation: followpath 8s linear forwards;
+  animation: followpath 12s linear forwards;
 }
 
 @keyframes followpath {
-  20% {
-    stroke-width: 10;
+  0% {
+    filter: drop-shadow(0 0 1px rgb(0, 217, 255));
   }
 
-  80% {
-    stroke-width: 15;
+  10% {
+    filter: drop-shadow(0 0 1px rgb(9, 255, 0));
+  }
+
+  25% {
+    filter: drop-shadow(0 0 1px rgb(255, 251, 0));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 1px rgb(255, 0, 0));
+  }
+
+  70% {
+    filter: drop-shadow(0 0 1px rgb(225, 0, 255));
+    stroke-dashoffset: 0;
+    stroke-width: 5;
+    stroke: black;
   }
 
   100% {
-    stroke: rgb(4, 191, 204);
-    stroke-width: 30;
+    stroke: rgb(0, 217, 255);
     stroke-dashoffset: 0;
-    filter: drop-shadow(0 0 7px #0ff);
+    stroke-width: 40;
+    filter: drop-shadow(0 0 50px rgb(0, 217, 255));
+    offset-distance: 100%;
+  }
+}
+
+@keyframes colourChange {
+  0% {
+    fill: rgb(0, 217, 255)
+  }
+
+  10% {
+    fill: rgb(9, 255, 0);
+  }
+
+  25% {
+    fill: rgb(255, 251, 0);
+  }
+
+  50% {
+    fill: rgb(255, 0, 0);
+  }
+
+  70% {
+    fill: rgb(225, 0, 255);
+  }
+
+  100% {
+    fill: rgb(0, 217, 255);
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  svg {
+    margin: 0 auto;
+  }
+
+  path {
+    transform: scale(.25);
+  }
+
+  textPath {
+    transform: scale(.25);
+  }
+
+  text {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 215px) {
+  svg {
+    margin: 0 auto;
+  }
+
+  path {
+    transform: scale(.1);
+  }
+
+  textPath {
+    transform: scale(.1);
+  }
+
+  text {
+    font-size: 12px;
   }
 }
