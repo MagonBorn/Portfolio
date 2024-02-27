@@ -1,3 +1,4 @@
+/* --------------Document Styles--------------*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +9,7 @@ body {
   background-color: black;
 }
 
-/* --------------Loading Animation--------------*/
+/* --------------Loading Screen Styles--------------*/
 svg {
   background-color: black;
   position: absolute;
@@ -18,7 +19,7 @@ svg {
   z-index: 10;
 }
 
-text {
+.loading {
   font-size: 72px;
   animation: colourChange 12s linear forwards;
 }
@@ -29,6 +30,25 @@ path {
   animation: followpath 12s linear forwards;
 }
 
+.skipButton {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+}
+
+.skipButton:hover {
+  transition: stroke-width 1s, r, 1s;
+  stroke-width: 5px;
+  r: 50;
+}
+
+.skipButton:active {
+  transition: stroke-width 0s, r 0s;
+  stroke-width: 3px;
+  r: 44;
+}
+
+/* --------------Loading Animation Path Keyframes --------------*/
 @keyframes followpath {
   0% {
     filter: drop-shadow(0 0 1px rgb(0, 217, 255));
@@ -85,6 +105,7 @@ path {
   }
 }
 
+/* --------------Loading Animation Colour Change Keyframes--------------*/
 @keyframes colourChange {
   0% {
     fill: rgb(0, 217, 255)
@@ -156,6 +177,7 @@ main {
 
 
 /* --------------Responsive Design-------------- */
+/* --------------Tablet Landscape--------------*/
 @media screen and (orientation: landscape) and (max-width: 1366px) {
   svg {
     margin: 0 auto;
@@ -175,6 +197,7 @@ main {
   }
 }
 
+/* --------------Tablet Portrait--------------*/
 @media screen and (orientation: portrait) and (max-width: 1024px) {
   svg {
     display: none;
@@ -185,7 +208,8 @@ main {
   }
 }
 
-@media screen and (max-width: 510px) {
+/* --------------Large Phone Landscape--------------*/
+@media screen and (orientation: landscape) and (max-width: 932px) {
   svg {
     display: none;
   }
@@ -195,7 +219,30 @@ main {
   }
 }
 
-@media screen and (max-width: 215px) {
+/* --------------Large Phone Portrait--------------*/
+@media screen and (orientation: portrait) and (max-width: 510px) {
+  svg {
+    display: none;
+  }
+
+  body {
+    background-color: #001F00;
+  }
+}
+
+/* --------------Medium Phone Landscape--------------*/
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  svg {
+    display: none;
+  }
+
+  body {
+    background-color: #001F00;
+  }
+}
+
+/* --------------Medium Phone Portrait--------------*/
+@media screen and (orientation: portrait) and (max-width: 320px) {
   svg {
     display: none;
   }
