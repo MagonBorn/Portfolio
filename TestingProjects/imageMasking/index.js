@@ -9,12 +9,15 @@ loader.addEventListener('animationend', () => {
   loader.style.transition = 'opacity, 2s';
   loader.style.opacity = '0%';
   loader.style.zIndex = '0';
-  body.style.transition = 'backgroundColor, 2s';
-  body.style.backgroundColor = '#083829';
   skipText.style.transition = 'opacity 1s';
   skipText.style.opacity = '0%';
   skipButton.style.transition = 'opacity 1s';
   skipButton.style.opacity = '0%';
+  setTimeout(function () {
+    loader.addEventListener('transitionend', function () {
+      loader.style.display = 'none';
+    })
+  }, 2000)
 })
 
 skipButton.addEventListener('mouseenter', () => {
@@ -38,7 +41,11 @@ skipButton.addEventListener('mousedown', () => {
   skipButton.style.r = '1250';
   skipButton.style.fill = 'url(#grad1)';
   skipButton.style.filter = 'drop-shadow(0 0 200px #083829)';
-  body.style.backgroundColor = '#083829';
+  setTimeout(function () {
+    loader.addEventListener('transitionend', function () {
+      loader.style.display = 'none';
+    })
+  }, 2000)
 })
 
 skipButton.addEventListener('mouseup', () => {
