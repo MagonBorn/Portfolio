@@ -29,10 +29,10 @@
 
     <!-- Skip button -->
     <circle class='skipButton' id='skipButton' r='45' cx='50%' cy='86%' fill="#EBE1CF" />
-    <text class='skipText' id='skipText' x='50%' y='86.8%' font-size='28' text-anchor='middle' stroke='#001F00'
+    <text class='skipText' id='skipText' dy='3px' x='50%' y='86.8%' font-size='42' text-anchor='middle'  stroke='#001F00'
       pointer-events='none'>skip</text>
 
-      <!-- Radial gradient for skip button -->
+    <!-- Radial gradient for skip button -->
     <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
       <stop offset="0%" stop-color="#EBDFC8" />
       <stop offset="100%" stop-color="#083829" />
@@ -40,7 +40,7 @@
   </svg>
 
   <!-- Header Section and Nav Bar -->
-  <header>
+  <header id='header'>
     <nav>
       <ul>
         <li><a href='#'>About Me</a></li>
@@ -53,12 +53,26 @@
   </header>
 
   <!-- Main Content -->
-  <main>
+  <main id='main'>
     <section class='aboutMe'>
       <h1>About Me</h1>
-      <p>This portfolio is a work in progress: Updates to come soon</p>
+      <section class='aboutMeCard'>
+        <p class='cardText'>This portfolio is a work in progress: Updates to come soon</p>
+      </section>
+      <section class='aboutMeText'>
+        <p class='cardText'>This text will appear on the right of the card.</p>
+      </section>
+    </section>
+    <section class='testCard'>
+      <p class='cardText'>Test: WHERE IS THIS TEXT?</p>
+      <p class='cardText'>Don't worry I found it. It's here.</p>
     </section>
   </main>
+
+  <!-- Footer Section -->
+  <footer id='footer'>
+    <p>Contact</p>
+  </footer>
 </body>
 
 </html>
