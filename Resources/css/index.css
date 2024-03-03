@@ -6,10 +6,9 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-content: space-between;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background-color: rgba(247, 244, 233, 1);
 }
 
 h1 {
@@ -28,14 +27,200 @@ a {
   font-weight: 700;
 }
 
+/* --------------Header Section-------------- */
+header {
+  display: block;
+  position: relative;
+  background-color: rgba(247, 244, 233, 1);
+  height: 80px;
+  width: 100%;
+  transition: all 3s;
+}
+
+nav {
+  height: 100%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  height: 100%;
+}
+
+nav ul li {
+  position: relative;
+  display: inline;
+  padding: 8px;
+  color: rgb(8, 56, 41);
+  font-size: 20px;
+  transition: font-size .4s, filter .4s;
+  min-width: 180px;
+  text-align: center;
+}
+
+nav ul li:hover {
+  position: relative;
+  border-top: 4px solid #083829;
+  border-bottom: 4px solid #083829;
+  border-radius: 15px;
+  border-style: double;
+  font-size: 28px;
+  transition: font-size .4s, filter .4s;
+  padding: 8px 8px;
+}
+
+nav ul li:hover~li:nth-child(n + 1),
+ul li:has(~ li:hover) {
+  opacity: .6;
+  font-size: 16px;
+  transition: all .4s;
+}
+
+nav ul li a:active {
+  color: rgb(17, 44, 92);
+}
+
+
+
+/* --------------Main Content-------------- */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 100%;
+  justify-content: center;
+  min-width: calc(100vw - 50px);
+  max-width: calc(100vw - 50px);
+  margin: 20px;
+  padding: 15px;
+  border-radius: 1em;
+  border: 2px solid rgba(0, 0, 0, .2);
+  box-shadow: 0px 0px 12.5px 2px rgba(0, 0, 0, 0.2);
+  transition: display 3s;
+  transition: opacity 3s;
+}
+
+main h1 {
+  text-align: center;
+  margin: 10px;
+  background-color: rgba(8, 56, 41, 1);
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  transform: skew(-20deg)
+}
+
+/* --------------Content Cards-------------- */
+.aboutMe {
+  display: flex;
+  width: 100%;
+  min-width: 320px;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: all 3s;
+}
+
+.aboutMeCard {
+  position: relative;
+  height: 1200px;
+  max-width: 24rem;
+  margin: 10px;
+  padding: 2px;
+  border-color: rgba(0, 0, 0, 0.3);
+  border-style: solid;
+  border-width: 0 2px 2px 2px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.aboutMeText .cardText {
+  color: black;
+}
+
+.aboutMeCard::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  right: 0px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-top: 8px solid rgb(102, 70, 22);
+  border-image: linear-gradient(to right, rgb(102, 70, 22), rgba(255, 255, 255, 1)) 1;
+}
+
+.aboutMeCard img {
+  width: 50%;
+  height: auto;
+  ;
+  background-color: black;
+  border: 1px solid red;
+  border-radius: 50%;
+}
+
+.aboutMeText {
+  margin: 10px;
+  border: 2px solid #EBDFC8;
+  border-radius: 15px;
+  filter: drop-shadow(0 2px 3px #EBDFC8);
+}
+
+.testCard {
+  max-width: 100%;
+  justify-content: center;
+  margin: 10px;
+  border: 2px solid #EBDFC8;
+  border-radius: 15px;
+  background-color: rgb(17, 44, 92);
+  filter: drop-shadow(0 2px 3px #EBDFC8);
+}
+
+
+/* --------------Footer Section-------------- */
+
+footer {
+  display: block;
+  position: relative;
+  align-items: center;
+  background-color: rgba(247, 244, 233, 1);
+  color: black;
+  height: 45px;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer p {
+  padding-left: 50%;
+}
+
+
+
+
+
+
+
 /* --------------Loading Animation Screen Styles--------------*/
 svg {
   background-color: black;
   position: absolute;
-  padding: 10px;
+  display: block;
   width: 100%;
   height: 100%;
   z-index: 10;
+  transition: all 2s;
+}
+
+path {
+  stroke-dasharray: 6000;
+  stroke-dashoffset: 6000;
+  animation: followpath 8s linear forwards;
+}
+
+.loadingText {
+  font-size: 72px;
+  animation: colourChange 8s linear forwards;
 }
 
 .skipButton {
@@ -46,9 +231,9 @@ svg {
 }
 
 .skipButton:hover {
-  transition: stroke-width 1s, r 2s;
+  transition: stroke-width 1s, r .5s;
   stroke-width: 5px;
-  r: 50;
+  r: 55;
 }
 
 .skipButton:not(:hover) {
@@ -66,16 +251,7 @@ svg {
   filter: drop-shadow(0 0 2px #083829);
 }
 
-path {
-  stroke-dasharray: 6000;
-  stroke-dashoffset: 6000;
-  animation: followpath 12s linear forwards;
-}
 
-.loadingText {
-  font-size: 72px;
-  animation: colourChange 12s linear forwards;
-}
 
 /* --------------Loading Animation Path Keyframes --------------*/
 @keyframes followpath {
@@ -134,6 +310,8 @@ path {
   }
 }
 
+
+
 /* --------------Loading Animation Colour Change Keyframes--------------*/
 @keyframes colourChange {
   0% {
@@ -174,179 +352,20 @@ path {
   }
 }
 
-/* --------------Header Section-------------- */
-header {
-  position: relative;
-  background-color: rgba(247, 244, 233, 1);
-  height: 80px;
-  width: 100%;
-
-}
-
-nav {
-  height: 100%;
-}
-
-ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-left: 80px;
-  margin-right: 80px;
-  height: 100%;
-}
-
-nav ul li {
-  position: relative;
-  display: inline;
-  padding: 8px;
-  color: rgb(8, 56, 41);
-  font-size: 20px;
-  transition: font-size .4s, filter .4s;
-  min-width: 180px;
-  text-align: center;
-}
-
-nav ul li:hover {
-  position: relative;
-  border-top: 4px solid #083829;
-  border-bottom: 4px solid #083829;
-  border-radius: 15px;
-  border-style: double;
-  font-size: 28px;
-  transition: font-size .4s, filter .4s;
-  padding: 8px 8px;
-}
-
-nav ul li:hover~li:nth-child(n + 1),
-ul li:has(~ li:hover) {
-  opacity: .6;
-  font-size: 16px;
-  transition: all .4s;
-}
-
-nav ul li a:active {
-  color: rgb(17, 44, 92);
-}
-
-/* --------------Main Content-------------- */
-
-main {
+/* --------------Style Classes--------------*/
+.hidden {
   display: none;
-  flex-wrap: wrap;
-  height: 100%;
-  justify-content: center;
-  min-width: calc(100vw - 50px);
-  max-width: calc(100vw - 50px);
-  padding: 15px;
-  border-radius: 1em;
-  border: 2px solid rgba(0, 0, 0, .2);
-  box-shadow: 0px 0px 12.5px 2px rgba(0, 0, 0, 0.2);
 }
 
-main h1 {
-  text-align: center;
-  margin: 10px;
-  background-color: rgba(8, 56, 41, 1);
-  border-top-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  transform: skew(-20deg)
+.visibilityHidden {
+  opacity: 0%;
 }
 
-.aboutMe {
-  width: 100%;
-  min-width: 320px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.aboutMeCard {
-  position: relative;
-  height: 2000px;
-  width: 700px;
-  margin: 10px;
-  padding: 2px;
-  border-color: rgba(0, 0, 0, 0.3);
-  border-style: solid;
-  border-width: 0 2px 2px 2px;
-  border-radius: 8px;
-  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
-}
-
-.aboutMeText .cardText {
-  color: black;
-}
-
-.aboutMeCard::before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: -1px;
-  right: 0px;
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
-  border-top: 8px solid rgb(102, 70, 22);
-  border-image: linear-gradient(to right, rgb(102, 70, 22), rgba(255, 255, 255, 1)) 1;
-}
-
-.aboutMe h1 {
-  display: none;
-  text-align: center;
-  border: 2px solid #EBDFC8;
-  border-radius: 15px;
-  /* background-color: #083829; */
-  filter: drop-shadow(0 2px 3px #EBDFC8);
-}
-
-.aboutMeText {
-  display: none;
-  margin: 10px;
-  border: 2px solid #EBDFC8;
-  border-radius: 15px;
-  /* background-color: #083829; */
-  filter: drop-shadow(0 2px 3px #EBDFC8);
-}
-
-.testCard {
-  display: none;
-  max-width: 100%;
-  justify-content: center;
-  margin: 10px;
-  border: 2px solid #EBDFC8;
-  border-radius: 15px;
-  background-color: rgb(17, 44, 92);
-  filter: drop-shadow(0 2px 3px #EBDFC8);
-}
-
-.testCard .cardText {
-  display: none;
-  color: gold;
-}
-
-/* --------------Footer Section-------------- */
-
-footer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: rgba(247, 244, 233, 1);
-  color: black;
-  height: 45px;
-  width: 100%;
-  margin-top: 20px;
-  bottom: 1px;
-}
-
-footer p {
-  padding-left: 50%;
-}
 
 
 /* --------------Responsive Design-------------- */
 /* --------------Tablet Landscape--------------*/
-@media screen and (orientation: landscape) and (max-width: 1366px) {
+/* @media screen and (orientation: landscape) and (max-width: 1366px) {
   svg {
     margin: 0 auto;
     padding-top: 10%;
@@ -363,39 +382,49 @@ footer p {
   text {
     font-size: 38px;
   }
-}
+} */
+
+
 
 /* --------------Tablet Portrait--------------*/
-@media screen and (orientation: portrait) and (max-width: 1024px) {
+/* @media screen and (orientation: portrait) and (max-width: 1024px) {
   svg {
     display: none;
   }
-}
+} */
+
+
 
 /* --------------Large Phone Landscape--------------*/
-@media screen and (orientation: landscape) and (max-width: 932px) {
+/* @media screen and (orientation: landscape) and (max-width: 932px) {
   svg {
     display: none;
   }
-}
+} */
+
+
 
 /* --------------Large Phone Portrait--------------*/
-@media screen and (orientation: portrait) and (max-width: 510px) {
+/* @media screen and (orientation: portrait) and (max-width: 510px) {
   svg {
     display: none;
   }
-}
+} */
+
+
 
 /* --------------Medium Phone Landscape--------------*/
-@media screen and (orientation: landscape) and (max-width: 768px) {
+/* @media screen and (orientation: landscape) and (max-width: 768px) {
   svg {
     display: none;
   }
-}
+} */
+
+
 
 /* --------------Medium Phone Portrait--------------*/
-@media screen and (orientation: portrait) and (max-width: 320px) {
+/* @media screen and (orientation: portrait) and (max-width: 320px) {
   svg {
     display: none;
   }
-}
+} */
