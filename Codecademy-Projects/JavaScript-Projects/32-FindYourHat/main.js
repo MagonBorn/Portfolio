@@ -1,12 +1,5 @@
 const prompt = require('prompt-sync')({ sigint: true });
 
-// ----------Variables----------
-const hat = '^';
-const hole = 'O';
-const fieldCharacter = '░';
-const pathCharacter = '*';
-let moveDirection = '';
-
 // ----------Field Class----------
 class Field {
   // Constructor
@@ -46,7 +39,7 @@ class Field {
     return line;
   }
 
-  // Check the user has provided a vlid movement input
+  // Check the user has provided a valid movement input
   checkUserInput() {
     let direction = prompt('Which direction do you wish to move? ').toLowerCase();
     if (!/[udlrnews]/.test(direction) === true) {
@@ -63,85 +56,45 @@ class Field {
     switch (direction) {
       case 'u': case 'n':
         newLocation.push(this.playerLocation[0] - 1, this.playerLocation[1]);
-        if (newLocation[0] < 0) {
-          this.endGame();
-        } else {
-          this.locationChecks(newLocation);
-        }
+        newLocation[0] < 0 ? this.endGame() : this.locationChecks(newLocation);
         break;
       case 'd': case 's':
         newLocation.push(this.playerLocation[0] + 1, this.playerLocation[1]);
-        if (newLocation[0] === this._field.length) {
-          this.endGame();
-        } else {
-          this.locationChecks(newLocation);
-        }
+        newLocation[0] === this._field.length ? this.endGame() : this.locationChecks(newLocation);
         break;
       case 'r': case 'e':
         newLocation.push(this.playerLocation[0], this.playerLocation[1] + 1);
-        if (newLocation[1] === this._field[0].length) {
-          this.endGame()
-        } else {
-          this.locationChecks(newLocation);
-        }
+        newLocation[1] === this._field[0].length ? this.endGame() : this.locationChecks(newLocation);
         break;
       case 'l': case 'w':
         newLocation.push(this.playerLocation[0], this.playerLocation[1] - 1);
-        if (newLocation[1] < 0) {
-          this.endGame();
-        } else {
-          this.locationChecks(newLocation);
-        }
+        newLocation[1] < 0 ? this.endGame() : this.locationChecks(newLocation);
     }
   }
 
   // Run a number of checks against the users position
   locationChecks(arr) {
-    this.checkForHole(arr);
-    if (this.checkForStar(arr) === true) {
-      this.updateMap(this.playerLocation);
-    };
-    this.checkForHat(arr);
+    if (this._field[arr[0]][arr[1]] === 'O') { this.endGame('hole'); };
+    if (this._field[arr[0]][arr[1]] === '*') { console.log(`\nYou can't return to this space\n`); this.updateMap(this.playerLocation); };
+    if (this._field[arr[0]][arr[1]] === '^') { this.winGame() };
     this.updateMap(arr);
-  }
-  // Check the players intended move for holes
-  checkForHole(arr) {
-    if (this._field[arr[0]][arr[1]] === 'O') {
-      this.endGame();
-    }
-  }
-
-  // Check the players intended move for backtracking
-  checkForStar(arr) {
-    if (this._field[arr[0]][arr[1]] === '*') {
-      console.log(`\nYou can't return to this space\n`);
-      return true;
-    }
-  }
-
-  // Check the plays intended move for their hat
-  checkForHat(arr) {
-    if (this._field[arr[0]][arr[1]] === '^') {
-      this.winGame()
-    }
   }
 
   // Update map to show player position and route
   updateMap(arr) {
     this._field[arr[0]][arr[1]] = '*';
-    this.playerLocation[0] = arr[0];
-    this.playerLocation[1] = arr[1]
+    this.playerLocation.splice(0, 1, arr[0], arr[1]);
     this.runGame();
   }
 
   // Lose condition
-  endGame() {
-    console.log(`You Have lost`);
-    let replay = prompt(`Do you want to play again? \'y\' for yes, \'n\' for no `).toLowerCase();
-    let newRows = prompt(`\nSpecify the number of rows, e.g., 4: `);
-    let newCols = prompt(`\nSpecify the number of columns, e.g., 4: `);
-    let newHoles = prompt(`\nSpecify the difficulty: what percent of the grid should be covered in holes?  `);
+  endGame(reason = 'oob') {
+    reason === 'oob' ? console.log(`GAME OVER: you fell off the grid`) : console.log(`GAME OVER: you fell down a hole`);
+    let replay = prompt(`\nDo you want to play again? \'y\' for yes, \'n\' for no `).toLowerCase();
     if (replay === 'y') {
+      let newRows = prompt(`Specify the number of rows, e.g., 4: `);
+      let newCols = prompt(`Specify the number of columns, e.g., 4: `);
+      let newHoles = prompt(`Specify the difficulty: what percent of the grid should be covered in holes?  `);
       let newGrid = new Field(Field.generateField(newRows, newCols, newHoles))
       newGrid.runGame();
     } else {
@@ -153,7 +106,7 @@ class Field {
   // Win condition
   winGame() {
     console.log(`You have Won, thanks for playing`);
-    throw new Error(`WINNER`);
+    throw new Error(`End Game`);
   }
 
   // Generate a random grid pattern based on passed in rows, columns and percentage of holes that should be in the grid
@@ -196,21 +149,11 @@ class Field {
         hatPos = false;
       } else {
         randRow = Math.floor(Math.random() * row);
-        randCol = Math.floor(Math.random()* col);
+        randCol = Math.floor(Math.random() * col);
       }
     }
     return field;
   }
 }
-
-
 const myField = new Field(Field.generateField(5, 20, 25));
-// Create new Field Class
-// const myField = new Field([
-//   ['░', '░', 'O'],
-//   ['░', '*', '░'],
-//   ['░', '^', '░'],
-// ]);
-
-// Start Game
 myField.runGame();
