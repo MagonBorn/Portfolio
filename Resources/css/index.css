@@ -14,7 +14,6 @@ body {
 h1 {
   font-size: 72px;
   padding: 10px;
-  color: #EBDFC8;
 }
 
 p {
@@ -22,7 +21,7 @@ p {
 }
 
 a {
-  color: black;
+  color: rgb(8, 56, 41);
   text-decoration: none;
   font-weight: 700;
 }
@@ -55,7 +54,6 @@ nav ul li {
   position: relative;
   display: inline;
   padding: 8px;
-  color: rgb(8, 56, 41);
   font-size: 20px;
   transition: font-size .4s, filter .4s;
   min-width: 180px;
@@ -92,8 +90,6 @@ main {
   flex-wrap: wrap;
   max-height: 100%;
   justify-content: center;
-  min-width: calc(100vw - 50px);
-  max-width: calc(100vw - 50px);
   margin: 20px;
   padding: 15px;
   border-radius: 1em;
@@ -115,28 +111,26 @@ main h1 {
 /* --------------Content Cards-------------- */
 .aboutMe {
   display: flex;
+  flex-direction: column-reverse;
   width: 100%;
-  min-width: 320px;
-  flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
   transition: all 3s;
 }
 
 .aboutMeCard {
+  display: flex;
+  justify-content: space-between;
   position: relative;
-  height: 1200px;
-  max-width: 24rem;
+  height: 100%;
+  max-width: 100%;
   margin: 10px;
-  padding: 2px;
+  padding: 8px;
   border-color: rgba(0, 0, 0, 0.3);
   border-style: solid;
   border-width: 0 2px 2px 2px;
   border-radius: 8px;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
-}
-
-.aboutMeText .cardText {
-  color: black;
 }
 
 .aboutMeCard::before {
@@ -152,38 +146,31 @@ main h1 {
 }
 
 .aboutMeCard img {
-  width: 50%;
+  padding: 10px;
+  max-width: 550px;
+  min-width: 100px;
+  width: 100%;
   height: auto;
-  ;
-  background-color: black;
-  border: 1px solid red;
-  border-radius: 50%;
+  object-fit: contain;
 }
 
-.aboutMeText {
-  margin: 10px;
-  border: 2px solid #EBDFC8;
-  border-radius: 15px;
-  filter: drop-shadow(0 2px 3px #EBDFC8);
-}
-
-.testCard {
+.socialMediaLinks {
+  display: flex;
+  position: relative;
+  height: 100%;
   max-width: 100%;
-  justify-content: center;
   margin: 10px;
-  border: 2px solid #EBDFC8;
-  border-radius: 15px;
-  background-color: rgb(17, 44, 92);
-  filter: drop-shadow(0 2px 3px #EBDFC8);
+  padding: 2px;
+  border-color: rgba(0, 0, 0, 0.3);
+  border-style: solid;
+  border-width: 0 2px 2px 2px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
-
 
 /* --------------Footer Section-------------- */
 
 footer {
-  display: block;
-  position: relative;
-  align-items: center;
   background-color: rgba(247, 244, 233, 1);
   color: black;
   height: 45px;
