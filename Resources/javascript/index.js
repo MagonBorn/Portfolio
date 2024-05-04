@@ -19,7 +19,7 @@ skipButton.addEventListener('mousedown', () => {
   skipText.style.fontSize = '400';
   skipText.innerHTML = 'Welcome';
 
-  body.style.transition = 'backgroundColor, 6s';
+  // body.style.transition = 'backgroundColor, 6s';
   body.style.backgroundColor = 'white';
 
   loadingContainer.classList.add('visibilityHidden');
