@@ -127,8 +127,8 @@ main h1 {
   margin: 10px;
   padding: 8px;
   border-color: rgba(0, 0, 0, 0.3);
-  background-color: rgba(8, 56, 41, 1);
-  background-image: linear-gradient(to top right, rgba(8, 56, 41, 1), 75%, white);
+  background-color: rgba(18, 53, 36, 1);
+  background-image: linear-gradient(to top, rgba(18, 53, 36, 1), 75%, white);
   border-style: solid;
   border-width: 0 2px 2px 2px;
   border-radius: 8px;
@@ -166,6 +166,7 @@ main h1 {
 
 .aboutMeCard aside {
   justify-self: center;
+  color: white;
   grid-area: 3 / 2 / span 1 / span 1;
 }
 
@@ -173,6 +174,7 @@ main h1 {
   display: flex;
   position: relative;
   justify-content: flex-end;
+  align-items: center;
   height: 100%;
   max-width: 100%;
   margin: 10px;
