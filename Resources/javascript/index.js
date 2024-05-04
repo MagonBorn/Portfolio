@@ -50,8 +50,8 @@ loadingContainer.addEventListener('animationend', () => {
 
   loadingContainer.addEventListener('transitionend', (e) => {
     if (e.propertyName === 'opacity') {
-      // body.style.transition = 'backgroundColor, 8s';
-      // body.style.backgroundColor = 'white';
+      body.style.transition = 'backgroundColor, 8s';
+      body.style.backgroundColor = 'white';
       loadingContainer.classList.add('hidden');
       header.classList.remove('hidden');
       mainContent.classList.remove('hidden');
