@@ -8,7 +8,8 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 45px);
+  /* Testing to see affects on real mobile device */
   background-color: rgba(247, 244, 233, 1);
 }
 
