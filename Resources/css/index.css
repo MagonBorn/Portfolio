@@ -128,7 +128,7 @@ main h1 {
   padding: 8px;
   border-color: rgba(0, 0, 0, 0.3);
   background-color: rgba(18, 53, 36, 1);
-  background-image: linear-gradient(to top, rgba(18, 53, 36, 1), 75%, white);
+  background-image: linear-gradient(to top, rgba(18, 53, 36, 1), 35%, white);
   border-style: solid;
   border-width: 0 2px 2px 2px;
   border-radius: 8px;
@@ -156,7 +156,7 @@ main h1 {
 
 .aboutMeCard img {
   grid-area: 1 / 2 / span 2 / span 2;
-  padding: 10px;
+  padding: 20px 10px;
   max-width: 500px;
   min-width: 275px;
   width: 100%;
@@ -460,8 +460,13 @@ path {
     flex-wrap: wrap;
   }
 
+  .aboutMeCard .cardText {
+    padding: 10px;
+  }
+
   .aboutMeCard img {
     max-width: 255px;
     height: auto;
+    padding: 0px;
   }
 }
