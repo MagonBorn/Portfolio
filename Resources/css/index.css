@@ -118,9 +118,10 @@ main h1 {
 }
 
 .aboutMeCard {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template: 2.5fr 2.5fr 1fr / 5fr 3fr;
   flex-wrap: wrap;
+  justify-items: center;
   position: relative;
   height: 100%;
   max-width: 100%;
@@ -146,17 +147,25 @@ main h1 {
 }
 
 .aboutMeCard .cardText {
+  justify-self: start;
+  grid-area: 1 / 1 / span 3 / span 1;
   padding: 5%;
-  width: 100%;
+  min-width: 40%;
 }
 
 .aboutMeCard img {
+  grid-area: 1 / 2 / span 2 / span 2;
   padding: 10px;
-  max-width: 550px;
+  max-width: 500px;
   min-width: 275px;
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.aboutMeCard aside {
+  justify-self: center;
+  grid-area: 3 / 2 / span 1 / span 1;
 }
 
 .socialMediaLinks {
@@ -350,6 +359,14 @@ path {
   }
 }
 
+
+
+
+
+
+
+
+
 /* --------------Style Classes--------------*/
 .hidden {
   display: none;
@@ -360,8 +377,7 @@ path {
 }
 
 
-
-/* --------------Responsive Design-------------- */
+/* --------------Media Queries-------------- */
 /* --------------Tablet Landscape--------------*/
 @media screen and (orientation: landscape) and (max-width: 1366px) {
   svg {
@@ -376,10 +392,6 @@ path {
     font-size: 24px;
   }
 
-  header {
-    display: none;
-  }
-
   .socialMediaLinks img {
     width: 70px;
     height: 70px;
@@ -391,7 +403,27 @@ path {
   }
 }
 
+/* --------------Large Phone Landscape--------------*/
+@media screen and (orientation: landscape) and (max-width: 932px) {
+  path {
+    transform: translate(-56%, -0%);
+  }
 
+  text {
+    font-size: 38px;
+  }
+}
+
+/* --------------Medium Phone Landscape--------------*/
+@media screen and (orientation: landscape) and (max-width: 768px) {
+  path {
+    transform: scale(.9) translate(-45%, 0%);
+  }
+
+  text {
+    font-size: 38px;
+  }
+}
 
 /* --------------Tablet Portrait--------------*/
 @media screen and (orientation: portrait) and (max-width: 1024px) {
@@ -405,35 +437,5 @@ path {
 
   p {
     font-size: 24px;
-  }
-
-  header {
-    display: none;
-  }
-}
-
-
-
-/* --------------Large Phone Landscape--------------*/
-@media screen and (orientation: landscape) and (max-width: 932px) {
-  path {
-    transform: translate(-56%, -0%);
-  }
-
-  text {
-    font-size: 38px;
-  }
-}
-
-
-
-/* --------------Medium Phone Landscape--------------*/
-@media screen and (orientation: landscape) and (max-width: 768px) {
-  path {
-    transform: scale(.9) translate(-45%, 0%);
-  }
-
-  text {
-    font-size: 38px;
   }
 }
