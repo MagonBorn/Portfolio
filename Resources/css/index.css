@@ -120,6 +120,7 @@ main h1 {
 .aboutMeCard {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   position: relative;
   height: 100%;
   max-width: 100%;
