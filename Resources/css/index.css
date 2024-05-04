@@ -6,6 +6,7 @@
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   min-height: 100vh;
   background-color: rgba(247, 244, 233, 1);
@@ -86,10 +87,7 @@ nav ul li a:active {
 
 /* --------------Main Content-------------- */
 main {
-  display: flex;
-  flex-wrap: wrap;
   max-height: 100%;
-  justify-content: center;
   margin: 20px;
   padding: 15px;
   border-radius: 1em;
@@ -111,8 +109,9 @@ main h1 {
 /* --------------Content Cards-------------- */
 .aboutMe {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   width: 100%;
+  min-width: 320px;
   justify-content: center;
   align-content: center;
   transition: all 3s;
@@ -171,15 +170,15 @@ main h1 {
 /* --------------Footer Section-------------- */
 
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(247, 244, 233, 1);
   color: black;
   height: 45px;
   width: 100%;
   margin-top: auto;
-}
-
-footer p {
-  padding-left: 50%;
+  text-align: center;
 }
 
 
@@ -352,66 +351,71 @@ path {
 
 /* --------------Responsive Design-------------- */
 /* --------------Tablet Landscape--------------*/
-/* @media screen and (orientation: landscape) and (max-width: 1366px) {
+@media screen and (orientation: landscape) and (max-width: 1366px) {
   svg {
     margin: 0 auto;
-    padding-top: 10%;
-  }
-
-  path {
-    transform: scale(.75);
-  }
-
-  textPath {
-    transform: scale(.75);
   }
 
   text {
     font-size: 38px;
   }
-} */
+
+  header {
+    display: none;
+  }
+}
 
 
 
 /* --------------Tablet Portrait--------------*/
-/* @media screen and (orientation: portrait) and (max-width: 1024px) {
+@media screen and (orientation: portrait) and (max-width: 1024px) {
   svg {
+    margin: 0 auto;
+  }
+
+  path {
+    transform: scale(.5);
+  }
+
+  text {
+    font-size: 38px;
+  }
+
+  header {
     display: none;
   }
-} */
+}
 
 
 
 /* --------------Large Phone Landscape--------------*/
-/* @media screen and (orientation: landscape) and (max-width: 932px) {
+@media screen and (orientation: landscape) and (max-width: 932px) {
   svg {
-    display: none;
+    margin: 0 auto;
   }
-} */
 
-
-
-/* --------------Large Phone Portrait--------------*/
-/* @media screen and (orientation: portrait) and (max-width: 510px) {
-  svg {
-    display: none;
+  path {
+    transform: translate(-56%, -0%);
   }
-} */
+
+  text {
+    font-size: 38px;
+  }
+}
 
 
 
 /* --------------Medium Phone Landscape--------------*/
-/* @media screen and (orientation: landscape) and (max-width: 768px) {
+@media screen and (orientation: landscape) and (max-width: 768px) {
   svg {
-    display: none;
+    margin: 0 auto;
   }
-} */
 
-
-
-/* --------------Medium Phone Portrait--------------*/
-/* @media screen and (orientation: portrait) and (max-width: 320px) {
-  svg {
-    display: none;
+  path {
+    transform: scale(.9) translate(-45%, 0%);
   }
-} */
+
+  text {
+    font-size: 38px;
+  }
+}
