@@ -152,6 +152,8 @@ main h1 {
 }
 
 .photoFrame {
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   grid-area: 1 / 2 / span 2 / span 1;
   background-color: rgba(247, 244, 233, 1);
@@ -162,10 +164,10 @@ main h1 {
   margin: 20px 20px 0px 20px;
   border-top: 20px solid black;
   border-bottom: 20px solid black;
-  max-width: 500px;
-  min-width: 275px;
+  max-width: 100%;
+  min-width: 300px;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .aboutMeCard p {
