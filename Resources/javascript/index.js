@@ -75,14 +75,14 @@ window.addEventListener('resize', function () {
   header.style.transition = 'none';
 })
 
-// Slideshow Code
-var myIndex = 0;
+// -------Slideshow Code-------
+let myIndex = 0;
 carousel();
 
 function carousel() {
-  var i;
-  var x = document.getElementsByClassName("imageSlides");
-  var y = document.getElementsByClassName('textSlides');
+  let i;
+  let x = document.getElementsByClassName("imageSlides");
+  let y = document.getElementsByClassName('textSlides');
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
     y[i].style.display = "none";
@@ -92,4 +92,15 @@ function carousel() {
   x[myIndex - 1].style.display = "block";
   y[myIndex - 1].style.display = "block";
   setTimeout(carousel, 10000);
+}
+
+// -------Open Mobile Nav Menu-------
+function openMenu(x) {
+  let mobileMenu = document.getElementById('mobileMenu');
+  x.classList.toggle('change');
+  if (mobileMenu.style.display === 'block') {
+    mobileMenu.style.display = 'none';
+  } else {
+    mobileMenu.style.display = 'block';
+  }
 }

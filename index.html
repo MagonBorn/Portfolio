@@ -48,14 +48,28 @@
   <header id='header' class='hidden visibilityHidden'>
     <nav>
       <ul>
-        <li><a href='#'>About Me</a></li>
-        <li><a href='#'>Education</a></li>
-        <li><a href='#'>Work History</a></li>
-        <li><a href='#'>Hobbies</a></li>
-        <li><a href='#'>Projects</a></li>
+        <li><a href='#aboutMe'>About Me</a></li>
+        <li><a href='#education'>Education</a></li>
+        <li><a href='#workHistory'>Work History</a></li>
+        <li><a href='#hobbies'>Hobbies</a></li>
+        <li><a href='#projects'>Projects</a></li>
       </ul>
+
+      <div class='burgerContainer' onclick='openMenu(this)'>
+        <div class='bar1'></div>
+        <div class='bar2'></div>
+        <div class='bar3'></div>
+      </div>
     </nav>
   </header>
+
+  <ul id='mobileMenu'>
+    <li><a href='#aboutMe'>About Me</a></li>
+    <li><a href='#education'>Education</a></li>
+    <li><a href='#workHistory'>Work History</a></li>
+    <li><a href='#hobbies'>Hobbies</a></li>
+    <li><a href='#projects'>Projects</a></li>
+  </ul>
 
   <!-- ----------Main Content---------- -->
   <main id='main' class='hidden visibilityHidden'>
