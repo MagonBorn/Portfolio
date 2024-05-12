@@ -542,6 +542,10 @@ path {
   text {
     font-size: 38px;
   }
+
+  .aboutMeCard {
+    display: block;
+  }
 }
 
 /* --------------Portrait Large--------------*/
