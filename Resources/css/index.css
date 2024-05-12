@@ -476,11 +476,15 @@ path {
     height: 70px;
   }
 
+  .aboutMeCard {
+    display: flex;
+  }
+
 
 }
 
 /* --------------Landscape Medium--------------*/
-@media screen and (orientation: landscape) and (max-width: 845px) {
+@media screen and (orientation: landscape) and (max-width: 965px) {
   path {
     transform: translate(-56%, -0%);
   }
@@ -531,6 +535,10 @@ path {
   .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
   }
+
+  .aboutMeCard {
+    display: block;
+  }
 }
 
 /* --------------Landscape Small--------------*/
@@ -541,10 +549,6 @@ path {
 
   text {
     font-size: 38px;
-  }
-
-  .aboutMeCard {
-    display: block;
   }
 }
 
@@ -608,7 +612,7 @@ path {
   .aboutMeCard {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
   }
 
   .aboutMeCard .cardText {
