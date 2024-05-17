@@ -175,11 +175,12 @@ main {
   padding: 10px;
 }
 
-.modules h1 {
+.modules h2 {
   display: inline;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 1.55rem;
+  font-size: 1.35rem;
+  font-weight: 700;
   font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -187,6 +188,12 @@ main {
   display: inline;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-size: 1.2rem;
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
+}
+
+.modules .moduleDescription ul li {
+  padding: 10px;
   font-size: 1.2rem;
   font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
 }
@@ -357,6 +364,12 @@ footer p {
     font-size: 1.2rem;
     font-weight: 100
   }
+
+  .modules .moduleDescription ul li {
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
+  }
 }
 
 /* --------------Landscape Small--------------*/
@@ -445,6 +458,12 @@ footer p {
     font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.2rem;
     font-weight: 100
+  }
+
+  .modules .moduleDescription ul li {
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
   }
 
   .modules h1 {
