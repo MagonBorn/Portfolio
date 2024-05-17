@@ -353,24 +353,6 @@ footer p {
   .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
   }
-
-  .modules p {
-    font-size: 1rem;
-  }
-
-  .modules .introduction {
-    display: block;
-    padding: 10px;
-    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 100
-  }
-
-  .modules .moduleDescription ul li {
-    padding: 10px;
-    font-size: 1rem;
-    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
-  }
 }
 
 /* --------------Landscape Small--------------*/
@@ -453,27 +435,8 @@ footer p {
     justify-content: start;
   }
 
-  .modules .introduction {
-    display: block;
-    padding: 10px;
-    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 100;
-  }
-
-  .webMobileCloudTechnologies .moduleDescription ul li {
-    padding: 10px;
-    font-size: 1.2rem;
-    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 100;
-  }
-
   .modules h1 {
     font-size: 1.2rem;
-  }
-
-  .modules p {
-    font-size: 1rem;
   }
 
   .modules .cardText {
