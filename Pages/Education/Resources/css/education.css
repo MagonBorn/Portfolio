@@ -266,6 +266,9 @@ footer p {
 }
 
 
+
+
+
 /* --------------Media Queries-------------- */
 /* --------------Landscape Large--------------*/
 @media screen and (orientation: landscape) and (max-width: 1366px) {
@@ -426,7 +429,7 @@ footer p {
   }
 
   .modules h1 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .modules .cardText {
