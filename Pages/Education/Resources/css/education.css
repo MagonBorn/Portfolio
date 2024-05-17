@@ -19,6 +19,7 @@ body {
 h1 {
   font-size: 2rem;
   font-weight: 700;
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
 }
 
 p {
@@ -178,9 +179,9 @@ main {
   display: inline;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
-  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
 }
 
 .modules p {
@@ -188,6 +189,7 @@ main {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 1.2rem;
+  font-weight: 100;
   font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
 }
 
