@@ -1,3 +1,9 @@
+/*--------------Font Styles--------------*/
+@font-face {
+  font-family: 'roboto';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+}
+
 /* --------------Document Styles--------------*/
 * {
   box-sizing: border-box;
@@ -11,14 +17,10 @@ body {
   height: 100vh;
 }
 
-h1 {
-  font-size: 72px;
-  padding: 10px;
-}
-
 p {
   font-size: 24px;
   padding: 10px;
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
 }
 
 a {
@@ -26,6 +28,7 @@ a {
   text-decoration: none;
   font-weight: 700;
 }
+
 
 /* --------------Header Section-------------- */
 header {
@@ -40,7 +43,7 @@ nav {
   height: 80px;
 }
 
-ul {
+nav ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,7 +73,7 @@ nav ul li:hover {
 }
 
 nav ul li:hover~li:nth-child(n + 1),
-ul li:has(~ li:hover) {
+nav ul li:has(~ li:hover) {
   opacity: .6;
   font-size: 16px;
 }
@@ -108,16 +111,19 @@ main {
   border: 2px solid rgba(0, 0, 0, .2);
   box-shadow: 0px 0px 12.5px 2px rgba(0, 0, 0, 0.2);
   background-color: rgba(8, 56, 41, .9);
-  /* width: 100%; */
 }
 
 main h1 {
   text-align: center;
   margin: 10px;
-  background-color: rgba(8, 56, 41, 1);
-  border-top-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  transform: skew(-20deg)
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
+}
+
+main p {
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
 }
 
 /* --------------Content Cards-------------- */
@@ -131,9 +137,6 @@ main h1 {
 }
 
 .aboutMeCard {
-  /* display: grid;
-  grid-template: 2.5fr 2.5fr / 5fr 3fr;
-  justify-items: end; */
   position: relative;
   height: 100%;
   max-width: 100%;
@@ -162,8 +165,29 @@ main h1 {
   min-width: 40%;
 }
 
+.cardText h2 {
+  display: inline;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.cardText ul {
+  padding-left: 10px;
+}
+
 .cardText li {
-  padding: 10px;
+  padding: 5px 0 5px 0;
+  font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.cardText a {
+  text-decoration: underline;
+  font-size: 1.3rem;
 }
 
 .photoFrame {
@@ -209,7 +233,6 @@ main h1 {
 }
 
 .aboutMeCard p {
-  text-align: center;
   padding-left: 20px;
 }
 
@@ -286,6 +309,14 @@ footer p {
     font-size: 24px;
   }
 
+  main h1 {
+    text-align: center;
+    margin: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
+  }
+
   .socialMediaLinks img {
     width: 70px;
     height: 70px;
@@ -294,6 +325,12 @@ footer p {
   .socialMediaLinks img[alt="LinkedIn Logo"] {
     width: 75px;
     height: 70px;
+  }
+
+  nav ul li:hover~li:nth-child(n + 1),
+  ul li:has(~ li:hover) {
+    opacity: 1;
+    font-size: 16px;
   }
 
 
@@ -420,10 +457,18 @@ footer p {
     transform: translate(0, -11px) rotate(45deg);
   }
 
-  .aboutMeCard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
+  nav ul li:hover~li:nth-child(n + 1),
+  ul li:has(~ li:hover) {
+    opacity: 1;
+    font-size: 16px;
+  }
+
+  main h1 {
+    text-align: center;
+    margin: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'roboto', 'Arial Narrow', Arial, sans-serif;
   }
 
   .aboutMeCard .cardText {
@@ -464,12 +509,6 @@ footer p {
 
   header nav ul {
     display: none;
-  }
-
-  .aboutMeCard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
   .aboutMeCard .cardText {
