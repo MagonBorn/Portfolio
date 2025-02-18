@@ -1,22 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import SearchBarContainer from './components/searchbar/SearchBarContainer'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to the Jammmin' App! It's great!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <SearchBarContainer/>
       </header>
     </div>
   );
