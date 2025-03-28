@@ -1,2 +1,0 @@
-Mon Feb 10: Started Project
-Tue Feb 18: Added Search Bar components
